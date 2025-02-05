@@ -37,8 +37,8 @@ dino_take_input:
 
     mov rax, 0 ; sys_read
     mov rdi, 0 ; stdin
-    mov rsi, rsp
-    mov rdx, 8
+    mov rsi, rsp ;  where to write
+    mov rdx, 8 ; size
     syscall
 
     mov rax, "out: "
@@ -48,7 +48,7 @@ dino_take_input:
     mov rax, 1 ; sys_write
     mov rdi, 1 ; stdout
     mov rsi, rsp ; str to write
-    mov rdx, 16
+    mov rdx, 16 ; size
     syscall
 
     pop rax
